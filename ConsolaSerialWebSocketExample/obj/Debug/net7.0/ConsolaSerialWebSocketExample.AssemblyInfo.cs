@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsolaSerialWebSocketExample")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e38c0dd7b5fc72f3c76d2e15cdf278c34fc8389a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsolaSerialWebSocketExample")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsolaSerialWebSocketExample")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

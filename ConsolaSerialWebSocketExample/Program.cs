@@ -11,14 +11,15 @@ public class Program
     public static WebSocketServerEngine _webSocketServerEngine;
     public static async Task Main(string[] args)
     {
-        Console.WriteLine("Open and Reading Serial Port COM3");
         _serialPortEngine = new SerialPortEngine("COM3");
         _webSocketServerEngine = new WebSocketServerEngine(IPAddress.Parse("127.0.0.1"));
         Console.WriteLine("Websocket starting in t http://127.0.0.1:4452");
 
+        _= _webSocketServerEngine.Start();
+        Console.WriteLine("Client Connected");
+        Console.WriteLine("Open and Reading Serial Port COM3");
         _serialPortEngine.OpenPort();
         _serialPortEngine.PortReadAction += PrintSerialPort;
-        _= _webSocketServerEngine.Start();
 
         bool closeTerminal=false;
 
