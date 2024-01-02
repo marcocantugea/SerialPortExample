@@ -3,20 +3,21 @@ using System;
 using  System.Threading;
 using System.Net;
 using System.Text;
-internal class Program : IDisposable
+using Microsoft.VisualBasic;
+public class Program : IDisposable
 {
 
-    public static SerialPort _serialPort= new SerialPort("COM6",9600,Parity.None,8,StopBits.One);
+    public static SerialPort _serialPort= new SerialPort("COM3",9600,Parity.None,8,StopBits.One);
     public static bool _exit=false;
-    public static StringBuilder _readPort=new StringBuilder();
+    public static List<string> _readPort=new List<string>();
    private async static Task Main(string[] args)
     {
        
-        _serialPort.Handshake = Handshake.None;
-        var listener = new HttpListener();
-        listener.Prefixes.Add("http://localhost:8086/");
-        listener.Start();
-        Console.WriteLine("Start websocket at http://localhost:8086/");
+        //_serialPort.Handshake = Handshake.None;
+        //var listener = new HttpListener();
+        //listener.Prefixes.Add("http://localhost:8086/");
+        //listener.Start();
+        //Console.WriteLine("Start websocket at http://localhost:8086/");
         try
         {
 
@@ -31,17 +32,13 @@ internal class Program : IDisposable
 
             _serialPort.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
          
-            while (true)
+            bool endProcess=false;
+
+            while (!endProcess)
             {
-                var context = await listener.GetContextAsync();
-                if (context.Request.IsWebSocketRequest)
+                if (_readPort.Contains("quit"))
                 {
-                    await ProcessWebSocketRequest(context);
-                }
-                else
-                {
-                    context.Response.StatusCode = 400;
-                    context.Response.Close();
+                    endProcess = true;
                 }
             }
         }
@@ -59,8 +56,8 @@ internal class Program : IDisposable
     private static void port_DataReceived(object sender, SerialDataReceivedEventArgs e) 
     { 
        // Show all the incoming data in the port's buffer
-       Console.WriteLine(_serialPort.ReadExisting()); 
-       _readPort.Append(_serialPort.ReadExisting());
+       _readPort.Add(_serialPort.ReadExisting().ToString());
+        Console.WriteLine(_readPort.LastOrDefault().ToString());
     }
 
     public void Dispose()

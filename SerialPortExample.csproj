@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ClientSerialWebSocket\**" />
+    <Compile Remove="ConsolaSerialWebSocketExample\**" />
+    <Compile Remove="WebSocketExample\**" />
+    <EmbeddedResource Remove="ClientSerialWebSocket\**" />
+    <EmbeddedResource Remove="ConsolaSerialWebSocketExample\**" />
+    <EmbeddedResource Remove="WebSocketExample\**" />
+    <None Remove="ClientSerialWebSocket\**" />
+    <None Remove="ConsolaSerialWebSocketExample\**" />
+    <None Remove="WebSocketExample\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
   </ItemGroup>
 

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "J1svx7bN+m4/1qv+bOsV/Nz88KbuinwN/hfySLfRLh0kFkL86s3Sx7jFRYSx0EptoDfeUREiuJBJ1AAPm8Hbyg==",
+  "success": true,
+  "projectFilePath": "D:\\laragon\\www\\SerialPortExample\\ClientSerialWebSocket\\ClientSerialWebSocket.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marco Cantu\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marco Cantu\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marco Cantu\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marco Cantu\\.nuget\\packages\\runtime.native.system.io.ports\\8.0.0\\runtime.native.system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marco Cantu\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marco Cantu\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\8.0.0\\runtime.osx-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\Marco Cantu\\.nuget\\packages\\system.io.ports\\8.0.0\\system.io.ports.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

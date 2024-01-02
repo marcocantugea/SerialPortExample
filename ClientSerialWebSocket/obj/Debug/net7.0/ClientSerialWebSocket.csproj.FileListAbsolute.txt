@@ -1,0 +1,13 @@
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\bin\Debug\net7.0\ClientSerialWebSocket.deps.json
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\bin\Debug\net7.0\ClientSerialWebSocket.dll
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\bin\Debug\net7.0\ClientSerialWebSocket.pdb
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ClientSerialWebSocket.csproj.AssemblyReference.cache
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ClientSerialWebSocket.GeneratedMSBuildEditorConfig.editorconfig
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ClientSerialWebSocket.AssemblyInfoInputs.cache
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ClientSerialWebSocket.AssemblyInfo.cs
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ClientSerialWebSocket.csproj.CoreCompileInputs.cache
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ClientSerialWebSocket.sourcelink.json
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ClientSerialWebSocket.dll
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\refint\ClientSerialWebSocket.dll
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ClientSerialWebSocket.pdb
+D:\laragon\www\SerialPortExample\ClientSerialWebSocket\obj\Debug\net7.0\ref\ClientSerialWebSocket.dll

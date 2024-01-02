@@ -1,0 +1,15 @@
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\WebSocketExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\WebSocketExample.AssemblyInfoInputs.cache
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\WebSocketExample.AssemblyInfo.cs
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\WebSocketExample.csproj.CoreCompileInputs.cache
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\WebSocketExample.sourcelink.json
+D:\laragon\www\SerialPortExample\WebSocketExample\bin\Debug\net6.0\WebSocketExample.exe
+D:\laragon\www\SerialPortExample\WebSocketExample\bin\Debug\net6.0\WebSocketExample.deps.json
+D:\laragon\www\SerialPortExample\WebSocketExample\bin\Debug\net6.0\WebSocketExample.runtimeconfig.json
+D:\laragon\www\SerialPortExample\WebSocketExample\bin\Debug\net6.0\WebSocketExample.dll
+D:\laragon\www\SerialPortExample\WebSocketExample\bin\Debug\net6.0\WebSocketExample.pdb
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\WebSocketExample.dll
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\refint\WebSocketExample.dll
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\WebSocketExample.pdb
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\WebSocketExample.genruntimeconfig.cache
+D:\laragon\www\SerialPortExample\WebSocketExample\obj\Debug\net6.0\ref\WebSocketExample.dll
