@@ -96,7 +96,7 @@ namespace ClientSerialWebSocket.Websocket
             
         }
 
-        public async Task SendDataMessate(string message)
+        public async Task SendDataMessage(string message)
         {
             byte[] messageInBytes=Encoding.UTF8.GetBytes(message);
             SendMessage(messageInBytes);
