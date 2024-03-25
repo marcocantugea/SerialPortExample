@@ -27,22 +27,29 @@ public class Program
 
         while (!closeTerminal)
         {
-            var read= Console.ReadLine();
-            if (string.IsNullOrEmpty(read)) continue;
-            if(read =="quit") closeTerminal = true;
-            if (closeConnection)
-            {
-                _webSocketServerEngine.Dispose();
-                closeTerminal = true;
-            }
+            //var read= Console.ReadLine();
+            //if (string.IsNullOrEmpty(read)) continue;
+            //if(read =="quit") closeTerminal = true;
+            //if (closeConnection)
+            //{
+            //    _webSocketServerEngine.Dispose();
+            //    closeTerminal = true;
+            //}
 
 
-            if (read.Contains("ws:"))
-            {
-                _webSocketServerEngine.SendDataMessage(read.Replace("ws:",""));
-                continue;
+            //if (read.Contains("ws:"))
+            //{
+            //    _webSocketServerEngine.SendDataMessage(read.Replace("ws:",""));
+            //    continue;
+            //}
+            //_serialPortEngine.SendDataToPort(read);
+            if(_webSocketServerEngine.RestartService) { 
+                _serialPortEngine.ClosePort();
+                _ = _webSocketServerEngine.Start();
+                Console.WriteLine("Client Connected");
+                Console.WriteLine("Open and Reading Serial Port COM3");
+                _serialPortEngine.OpenPort();
             }
-            _serialPortEngine.SendDataToPort(read);
         }
 
         

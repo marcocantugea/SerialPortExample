@@ -7,7 +7,7 @@ using Microsoft.VisualBasic;
 public class Program : IDisposable
 {
 
-    public static SerialPort _serialPort= new SerialPort("COM3",9600,Parity.None,8,StopBits.One);
+    public static SerialPort _serialPort= new SerialPort("COM2",9600,Parity.None,8,StopBits.One);
     public static bool _exit=false;
     public static List<string> _readPort=new List<string>();
    private async static Task Main(string[] args)

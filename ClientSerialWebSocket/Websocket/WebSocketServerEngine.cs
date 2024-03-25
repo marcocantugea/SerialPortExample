@@ -16,8 +16,10 @@ namespace ClientSerialWebSocket.Websocket
         private TcpClient _client;
         private  NetworkStream _stream;
         private List<string> _receivedMessages=new List<string>();
+        private bool _restart = false;
 
         public List<string> ReceivedMessages { get { return _receivedMessages; }}
+        public bool RestartService { get { return _restart; }}
 
         public WebSocketServerEngine(IPAddress address,int port=4452)
         {
@@ -26,6 +28,7 @@ namespace ClientSerialWebSocket.Websocket
 
         public async  Task<WebSocketServerEngine> Start()
         {
+            if(_restart) _restart = false;
             _server.Start();
             _client= _server.AcceptTcpClient();
             _stream= _client.GetStream();
@@ -38,9 +41,21 @@ namespace ClientSerialWebSocket.Websocket
             return this;
         }
 
+        public async Task<WebSocketServerEngine> Restart()
+        {
+            if(_restart) {
+                _ = Task.Run(async () =>
+                {
+                    await Process();
+                });
+            }
+            return this;
+        }
+
         private async Task Process()
         {
-            while (true)
+            var task = true;
+            while (task)
             {
                 while (!_stream.DataAvailable) ;
                 while (_client.Available < 3) ; // match against "get"
@@ -88,6 +103,13 @@ namespace ClientSerialWebSocket.Websocket
 
                     string text = Encoding.UTF8.GetString(decoded);
                     _receivedMessages.Add(text);    
+                }
+                else if (msglen == 0 && mask)
+                {
+                    _client.Close();
+                    _server.Stop();
+                    task = false;
+                    _restart=true;
                 }
                 else
                     Console.WriteLine("mask bit not set");
@@ -204,6 +226,7 @@ namespace ClientSerialWebSocket.Websocket
         public void Dispose()
         {
             if (_server != null) {
+                _client.Close();
                 _server.Stop();
                 _server = null;
             }

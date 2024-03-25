@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WebsocketconnectionService } from '../../services/websocketconnection.service';
+import { Observable, Subscriber, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-websocket-example',
@@ -10,21 +11,31 @@ import { WebsocketconnectionService } from '../../services/websocketconnection.s
 })
 export class WebsocketExampleComponent {
 
-  message:string="0";
+  message: string = "0";
+  subscriptions: Subscription[] = [];
 
   constructor( private websocketService:WebsocketconnectionService ){}
   
   ngOnInit(): void {
-    this.websocketService.GetConnection().subscribe({
-      next:(response)=>{
-        
-        this.message=response.message;
+    this.OpenWebSocket();
+  }
+
+  OpenWebSocket() {
+    this.subscriptions.push(this.websocketService.GetConnection().subscribe({
+      next: (response) => {
+
+        this.message = response.message;
       },
-      error:(error)=>{
+      error: (error) => {
         console.log(error);
-        this.message=error;
+        this.message = error;
       }
-    })
+    }));
+  }
+
+  CloseWebSocket() {
+    this.websocketService.CloseConnection();
+    this.subscriptions.forEach((s) => { s.unsubscribe });
   }
 
 }
