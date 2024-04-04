@@ -4,10 +4,11 @@ using  System.Threading;
 using System.Net;
 using System.Text;
 using Microsoft.VisualBasic;
+using System.Security.Cryptography;
 public class Program : IDisposable
 {
 
-    public static SerialPort _serialPort= new SerialPort("COM2",9600,Parity.None,8,StopBits.One);
+    public static SerialPort _serialPort= new SerialPort("COM3",9600,Parity.None,8,StopBits.One);
     public static bool _exit=false;
     public static List<string> _readPort=new List<string>();
    private async static Task Main(string[] args)
@@ -22,25 +23,29 @@ public class Program : IDisposable
         {
 
             _serialPort.Open();
-            for (int i = 0; i < 10; i++)
+            //for (int i = 0; i < 10; i++)
+            while(true) 
             {
-                Console.WriteLine("Sending msg.");
-                _serialPort.WriteLine(String.Format("<{0}>: {1}", "P01", "message sent"));
+                Random rnd = new Random();
+                int num = rnd.Next(10);
+                Console.WriteLine("Sending msg." + num);
+                _serialPort.WriteLine(String.Format("{0}", num.ToString()));
+                Task.Delay(6000).Wait();
             }
 
-            Console.WriteLine("Startig to read data:");
+            //Console.WriteLine("Startig to read data:");
 
-            _serialPort.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
+            //_serialPort.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
          
-            bool endProcess=false;
+            //bool endProcess=false;
 
-            while (!endProcess)
-            {
-                if (_readPort.Contains("quit"))
-                {
-                    endProcess = true;
-                }
-            }
+            //while (!endProcess)
+            //{
+            //    if (_readPort.Contains("quit"))
+            //    {
+            //        endProcess = true;
+            //    }
+            //}
         }
         catch (System.Exception)
         {
